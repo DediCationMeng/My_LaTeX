@@ -1,0 +1,54 @@
+% --------文档类型设置--------
+
+% 常见可选参数：
+% 字号大小：10pt, 11pt, 12pt
+% 纸张大小：a4paper, letterpaper, a5paper, b5paper, legalpaper, executivepaper
+% 单栏/双栏：onecolumn, twocolumn
+
+\documentclass[a4paper,12pt]{article}
+
+% --------文档类型设置--------
+
+
+% -------导言区设置--------
+
+% 载入宏包
+\input{packages.tex}
+% 载入模板的全局设置
+\input{introductory.tex}
+
+\counterwithout{table}{section}
+% --------导言区设置--------
+
+
+% --------标题、作者、日期设置--------
+
+\title{\textbf{\LaTeX template for usual documents}}
+
+\author{Meng Zhiran}
+
+\date{\today}
+
+% --------标题、作者、日期设置--------
+
+% --------正文内容--------
+
+\begin{document}
+
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{\textbf{Antibiotic test design and concentration gradients}}
+    \begin{tabular}{cll}   
+    \toprule
+    \textbf{Antibiotics} & \multicolumn{1}{c}{\textbf{Description}}              & \multicolumn{1}{c}{\textbf{Concentration Gradient}/ $\mu g\cdot mL^{-1}$}        \\ \midrule
+    Ampicillin (Amp)     & $\beta$-lactam antibiotics                            & $12 \to 6 \to 3 \to 2 \to 1 \to 0.5 \to 0.25 \to 0.1 $    \\
+    Ciprofloxacin (CIP)  & Quinolone antibiotics                                 & $3 \to 2 \to 1 \to 0.5 \to 0.25 \to 0.1 \to 0.05 \to 0.01$ \\
+    Erythromycin (E)     & Macrolide antibiotics                                 & $400 \to 200 \to 100 \to 50 \to 25 \to 12.5 \to 6 \to 3$ \\
+    Polymyxin B (PB)     & Polymyxin antibiotics                                 & $50 \to 25 \to 12.5 \to 6.25 \to 3 \to 1 \to 0.5 \to 0.25$     \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\end{document}
+
