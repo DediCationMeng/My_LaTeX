@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{luacode}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\directlua {require "asciiart"}
+\newcommand\bwascii[1]{\directlua{bwascii("#1")}}
+\newcommand\colorascii[1]{\directlua{colorascii("#1")}}
+\newcommand\bwframe[1]{\vspace*{\fill}\bwascii{#1}\vspace*{\fill}\newpage}
+\newcommand\colorframe[1]{\vspace*{\fill}\colorascii{#1}\vspace*{\fill}\newpage}
+
+\begin{document}
+\ttfamily\frenchspacing
+\newlength{\correctem}\settowidth{\correctem}{M}%to set the size of the minipage
+\newlength{\correctex}\settowidth{\correctex}{x}%to set the line height
+\pagestyle{empty}\centering
+
+\colorframe{Knuth.ppm}
+\end{document}

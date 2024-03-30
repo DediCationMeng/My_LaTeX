@@ -1,0 +1,62 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+
+    /////  Vscode 菜单操作类似的快捷键 //////
+        {
+            "key": "alt+m",
+            "command": "workbench.action.toggleMenuBar"
+        },
+        {
+            "key": "alt+f",
+            "command": "workbench.action.toggleActivityBarVisibility"
+        },
+    
+    
+    
+    /////// latex配置的快捷键 ///////
+        // 一：开始编译
+        // 1. 编译菜单选择
+        {
+            "key": "alt+r",
+            "command": "latex-workshop.recipes"
+        },
+        // 2. 默认使用xelatex编译
+        {
+            "key": "alt+x",
+            "command": "latex-workshop.build",
+            "when": "editorTextFocus && !isMac"
+        },
+        // 3. kill掉正在编译的文档
+        {
+            "key": "alt+k",
+            "command": "latex-workshop.kill",
+            "when": "editorTextFocus && !isMac"
+        },
+    
+        // 二：编译结束
+        // 1. 清除latex编译结束后产生的辅助文件
+        {
+            "key": "alt+c",
+            "command": "latex-workshop.clean"
+        },
+        // 2. 源码和pdf之间的精确跳转
+        {
+            "key": "alt+j",
+            "command": "latex-workshop.synctex",
+            "when": "editorTextFocus && !isMac"
+        },
+    
+    
+        // 三：审阅编译出来的pdf
+        // 1. 外部查看
+        {
+            "key": "alt+e",
+            "command": "latex-workshop.viewExternal",
+            "when": "editorTextFocus && !isMac"
+        },
+        // 2. 内部查看
+        {
+            "key": "alt+i",
+            "command": "latex-workshop.view",
+        },
+    ]

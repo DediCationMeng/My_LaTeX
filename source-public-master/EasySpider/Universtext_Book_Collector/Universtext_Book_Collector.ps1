@@ -1,0 +1,2 @@
+cd C:\'Program Files'\EasySpider_windows_0.6.0\
+./EasySpider/resources/app/chrome_win64/easyspider_executestage.exe --ids [1] --user_data 0 --server_address http://localhost:8074 --config_folder "C:/Program Files/EasySpider_windows_0.6.0/" --headless 1 --read_type local --config_file_name config.json --saved_file_name 

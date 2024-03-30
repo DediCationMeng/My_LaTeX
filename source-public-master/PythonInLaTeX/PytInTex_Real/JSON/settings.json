@@ -1,0 +1,180 @@
+{
+    //////// latex配置 //////
+    // LaTeX编译引擎
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pytex",
+            "command": "pythontex",
+            "args": [
+                "%DOC%",
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "--shell-escape",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "PyJinJa",
+            "command": "C:\\Program Files\\MATLAB\\python-3.7.9-embed-amd64\\python.exe pytex.py",
+            "args": [
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "Test",
+            "command": "C:\\Program Files\\MATLAB\\python-3.7.9-embed-amd64\\python.exe",
+            "args": [
+                "%DOC%"
+            ]
+        },
+    ],
+    // LaTeX编译菜单
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex"
+            ]
+        },
+        {
+            "name": "pythontex",
+            "tools": [
+                "pytex"
+            ]
+        },
+        {
+            "name": "PyJinJa",
+            "tools": [
+                "PyJinJa"
+            ]
+        },
+        {
+            "name": "xe -> bib -> xe*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        // 折中的方案：尽管不能一步到位，但是可以两次
+        {
+            "name": "pytex -> xe",
+            "tools": [
+                "pytex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdf -> bib -> pdf*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    // 在外部和内部pdf之间切换：如果换做内置pdf，那么sumatrapdf中预览时，双击无法跳转
+    // 但是我设为内置的pdf阅览器是就可以兼顾：alt + E在sumatrapdf中阅览，Alt + i在vscode内部预览
+    // pdf阅览方式的选择：tab, external
+    // "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.ref.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Users/PC/AppData/Local/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.command": "C:/Users/PC/AppData/Local/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "\"C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -g \"%f:%l\"",
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.rightClickBehavior": "nothing",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "workbench.activityBar.visible": false,
+    // 快捷键说明  
+    // 将 Alt + j 绑定到正向搜索【jump】（double-click正向失效,所以在keyjson中配置了Alt + j 快捷键）
+    // 反向搜索只需要双击sumatrapdf即可
+    // 将 Alt + r 绑定到选择编译方式【recipe】
+    // 将 Alt + x 绑定到使用默认xelatex编译【xelatex】
+    // 将 Alt + k 绑定到终止编译【kill】
+    // 将 Alt + e 绑定到sumatrapdf查看【external】
+    // 将 Alt + i 绑定到vscode内部查看【internal】
+    // 将 Alt + c 绑定到清理编译产生的辅助文件【clean】
+    // 注：可以自行更换为适合自己的快捷键，只需修改“key”那一项即可。
+}
